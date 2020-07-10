@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         //Creates a new ArrayList and adds the Exercise objects into the ArrayList
-        List<Exercise> exercisesList = new ArrayList<Exercise>();
+        List<Exercise> exercisesList = new ArrayList<>();
 
         exercisesList.add(new Exercise("Push-Ups", "Place your hands on the floor. Raise up onto your toes so that all of your body weight is on your hands and your feet. Bend your elbows and lower your chest down toward the floor. Then, push off the floor and extend them so that you return to starting position.", 30, true));
         exercisesList.add(new Exercise("Planks", "Start on the floor on your hands and knees. Lower your forearms to the floor with elbows positioned under your shoulders and your hands shoulder-width apart. Maintain a straight line from heels through the top of your head, looking down at the floor. Now, tighten your abs and hold.", 90, true));
@@ -15,14 +15,14 @@ public class Main {
         exercisesList.add(new Exercise("Sidewards Back Stretch", " Go into standing position, put your hands on your hips and then stretch with one hand over your head to the opposite side. Repeat with other hand.", 60, false));
 
         //Calls the method to print all the exercises offered!
-        System.out.println("The exercises offered are:");
+        System.out.println("\nThe exercises offered are:\n");
         Exercise.printExerciseList(exercisesList);
 
         //Calls the method to print the exercises "touching the floor" and "touching the floor & longer than 1 minute"!
         Exercise.printLimitedExercises(exercisesList);
 
         //Creates a list of all exercises included in the Example Interval Workout!
-        List<Exercise> exercisesIncluded = new ArrayList<Exercise>();
+        List<Exercise> exercisesIncluded = new ArrayList<>();
 
         //Adds Push-Ups to the list!
         exercisesIncluded.add(exercisesList.get(0));
@@ -32,20 +32,20 @@ public class Main {
         exercisesIncluded.add(exercisesList.get(1));
 
         //Creates a list to store IntervalWorkout Objects
-        List<IntervalWorkout> intervalWorkoutType = new ArrayList<IntervalWorkout>();
+        List<IntervalWorkout> intervalWorkoutType = new ArrayList<>();
 
         //Creates and stores the example Interval Workout Object
         intervalWorkoutType.add(new IntervalWorkout(exercisesIncluded, 4, 30));
 
-        //Additional Examples of IntervalWorkout Example to show additional data;
-        List<Exercise> exercisesIncluded2 = new ArrayList<Exercise>();
+        //Additional Examples of IntervalWorkout Example to show optional data;
+        List<Exercise> exercisesIncluded2 = new ArrayList<>();
         exercisesIncluded2.add(exercisesList.get(2));
         exercisesIncluded2.add(exercisesList.get(1));
         exercisesIncluded2.add(exercisesList.get(4));
         exercisesIncluded2.add(exercisesList.get(5));
         intervalWorkoutType.add(new IntervalWorkout(exercisesIncluded2, 5, 25));
 
-        List<Exercise> exercisesIncluded3 = new ArrayList<Exercise>();
+        List<Exercise> exercisesIncluded3 = new ArrayList<>();
         exercisesIncluded3.add(exercisesList.get(0));
         exercisesIncluded3.add(exercisesList.get(5));
         exercisesIncluded3.add(exercisesList.get(2));
@@ -53,7 +53,7 @@ public class Main {
         exercisesIncluded3.add(exercisesList.get(0));
         intervalWorkoutType.add(new IntervalWorkout(exercisesIncluded3, 10, 15));
 
-        //Calls the print method from the IntervalWorkout Class to display all the IntervalWorkout Objects created!
+        //Calls the print method from the IntervalWorkout Class to display the selected IntervalWorkout Object!
         IntervalWorkout.printResults(intervalWorkoutType);
 
 

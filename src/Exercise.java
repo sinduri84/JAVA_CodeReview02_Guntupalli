@@ -16,19 +16,19 @@ public class Exercise {
 
     //print method to print the objects in the required format
     public static void printExerciseList(List<Exercise> exercisesList) {
-        for (int i = 0; i < exercisesList.size(); i++) {
+        for (Exercise element : exercisesList) {
             System.out.printf("%-32s DURATION: %dseconds. %n" +
                             "%s%n" +
                             "DESCRIPTION: %s.%n%n",
-                    exercisesList.get(i).exerciseName, exercisesList.get(i).exerciseDuration,
-                    "-".repeat(53), exercisesList.get(i).exerciseDescription);
+                    element.exerciseName, element.exerciseDuration,
+                    "-".repeat(53), element.exerciseDescription);
         }
     }
 
-    //Method to print the exercises where your hands touch the floor or where your hands touch the floor and are longer than 60 seconds;
+    //Method to print the exercises where your hands touch the floor and where your hands touch the floor and are longer than 60 seconds;
     public static void printLimitedExercises(List<Exercise> exercisesList) {
-        List<Exercise> exercisesFloor = new ArrayList<Exercise>();
-        List<Exercise> exercisesFloorLong = new ArrayList<Exercise>();
+        List<Exercise> exercisesFloor = new ArrayList<>();
+        List<Exercise> exercisesFloorLong = new ArrayList<>();
 
         for (Exercise element : exercisesList) {
             if (element.exerciseFloor && element.exerciseDuration > 60) {
@@ -37,6 +37,7 @@ public class Exercise {
             if (element.exerciseFloor) {
                 exercisesFloor.add(element);
             }
+
         }
 
         //Exercises on the floor
